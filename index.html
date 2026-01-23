@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/656fefcf5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="assets/images/logo.png" class="logo" id="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Front-end Developer</p>
+            <h1>Hi, I am <span>Gian Ybut</span><br>From Philippines</h1>
+        </div>
+    </div>
+</div>
+<!------------about------------>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="assets/images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta ratione enim cumque, sint culpa aut sit voluptate nisi voluptatum. Eius exercitationem velit quod pariatur expedita enim, culpa accusantium ad dicta!</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Projects')">Projects</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>Front-end Dev</span><br>Designing Web interfaces</li>
+                        <li><span>Web Development</span><br>HTML, CSS, Javascript</li>
+                        <li><span>Java Fundamentals</span><br>Arrays, Linked Lists, Stacks, Queues</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Projects">
+                    <ul>
+                        <li><span>September – December 2025</span><br>Spontrip – Mood-Based Place Recommendation Web App</li>
+                        <li><span>January – May 2025</span><br>Dishcovery – Recipe Finder Web App</li>
+                        <li><span>Python and Java – 2024</span><br>Data Structures Laboratory Activities</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>2023 – Present</span><br>BS in Computer Science at De La Salle University – Dasmariñas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services -->
+ <div class="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-compass-drafting"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                <a href="#" class="hero-btn red-btn">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                <a href="#" class="hero-btn red-btn">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-uikit"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                <a href="#" class="hero-btn red-btn">Learn more</a>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<!-- portfolio -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Certificates</h1>
+        <div class="certification-list">
+            <div class="certificate">
+                <img src="assets/images/certificate-1.jpg">
+                <div class="layer">
+                    <h3>Certificate of Participation</h3>
+                    <p>QCSP Lecture Series: Introduction to Quantum Natural Language Processing (September – November 2024)</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="certificate">
+                <img src="assets/images/certificate-2.jpg">
+                <div class="layer">
+                    <h3>Certificate of Participation</h3>
+                    <p>START: Fundamentals of Git and GitHub</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="certificate">
+                <img src="assets/images/certificate-3.jpg">
+                <div class="layer">
+                    <h3>Statement of Achievement</h3>
+                    <p>Cisco Networking Academy: JavaScript Essentials 1</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!-- contact -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> ybutgianpaolo@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> +63 920 602 2884</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/gpybut/"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/gpybut/"><i class="fa-brands fa-square-linkedin"></i></a>
+                    <a href="https://github.com/gianybut"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="files/CV_GIANYBUT.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2026 GPYBUT. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+</body>
+</html>
