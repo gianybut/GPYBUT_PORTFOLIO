@@ -89,7 +89,7 @@ window.addEventListener('scroll', () => {
     // Disable parallax on mobile for performance
     if (window.innerWidth <= 859) {
         // Reset transform on mobile
-        const parallaxElements = document.querySelectorAll('.header-text, nav');
+        const parallaxElements = document.querySelectorAll('.header-text');
         parallaxElements.forEach(el => {
             el.style.transform = 'none';
         });
@@ -97,7 +97,7 @@ window.addEventListener('scroll', () => {
     }
     
     const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.header-text, nav');
+    const parallaxElements = document.querySelectorAll('.header-text');
     
     parallaxElements.forEach(el => {
         const speed = 0.5;
@@ -105,16 +105,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Parallax Scrolling Effect
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.header-text, nav');
-    
-    parallaxElements.forEach(el => {
-        const speed = 0.5;
-        el.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.btn, .btn2, .hero-btn');
     
