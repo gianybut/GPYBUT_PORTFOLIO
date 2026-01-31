@@ -34,44 +34,57 @@ function createParticles() {
 
 createParticles();
 
+// Hide particles when scrolling for cleaner appearance
+window.addEventListener('scroll', () => {
+    const particlesContainer = document.querySelector('.particles');
+    if (particlesContainer) {
+        if (window.scrollY > 100) {
+            particlesContainer.style.opacity = '0';
+        } else {
+            particlesContainer.style.opacity = '1';
+        }
+    }
+});
+
 // Scroll Reveal Animation
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-active');
-        }
-    });
-}, observerOptions);
+// Removed scroll reveal animations for static appearance
+// const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('reveal-active');
+//         }
+//     });
+// }, observerOptions);
 
 // Add reveal class to sections
-document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('#about, #services, #portfolio, #contact');
-    revealElements.forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
+// document.addEventListener('DOMContentLoaded', () => {
+//     const revealElements = document.querySelectorAll('#about, #services, #portfolio, #contact');
+//     revealElements.forEach(el => {
+//         el.classList.add('reveal');
+//         observer.observe(el);
+//     });
 
-    // Animate service cards on scroll
-    const serviceCards = document.querySelectorAll('.services-list div');
-    serviceCards.forEach((card, index) => {
-        card.classList.add('reveal');
-        card.style.transitionDelay = `${index * 0.2}s`;
-        observer.observe(card);
-    });
+//     // Animate service cards on scroll
+//     const serviceCards = document.querySelectorAll('.services-list div');
+//     serviceCards.forEach((card, index) => {
+//         card.classList.add('reveal');
+//         card.style.transitionDelay = `${index * 0.2}s`;
+//         observer.observe(card);
+//     });
 
-    // Animate certificates on scroll
-    const certificates = document.querySelectorAll('.certificate');
-    certificates.forEach((cert, index) => {
-        cert.classList.add('reveal');
-        cert.style.transitionDelay = `${index * 0.15}s`;
-        observer.observe(cert);
-    });
-});
+//     // Animate certificates on scroll
+//     const certificates = document.querySelectorAll('.certificate');
+//     certificates.forEach((cert, index) => {
+//         cert.classList.add('reveal');
+//         cert.style.transitionDelay = `${index * 0.15}s`;
+//         observer.observe(cert);
+//     });
+// });
 
 // Add smooth scroll progress indicator
 const progressBar = document.createElement('div');
