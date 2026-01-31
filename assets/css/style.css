@@ -106,6 +106,7 @@ nav ul li a:hover::after{
     height: 100%;
     overflow: hidden;
     z-index: 0;
+    transition: opacity 0.5s ease;
 }
 
 .particle {
