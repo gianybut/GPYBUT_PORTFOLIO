@@ -1,30 +1,30 @@
-// Add animated circles in the background (only on desktop)
-function createFloatingCircles() {
-    // Check if screen width is larger than 860px (desktop)
-    if (window.innerWidth <= 859) return;
+// Removed floating circles animation
+// function createFloatingCircles() {
+//     // Check if screen width is larger than 860px (desktop)
+//     if (window.innerWidth <= 859) return;
     
-    const about = document.getElementById('about');
-    const services = document.getElementById('services');
-    const contact = document.getElementById('contact');
+//     const about = document.getElementById('about');
+//     const services = document.getElementById('services');
+//     const contact = document.getElementById('contact');
     
-    [about, services, contact].forEach(section => {
-        if (section) {
-            for (let i = 0; i < 3; i++) {
-                const circle = document.createElement('div');
-                circle.className = 'floating-circle';
-                circle.style.left = Math.random() * 100 + '%';
-                circle.style.top = Math.random() * 100 + '%';
-                circle.style.animationDelay = Math.random() * 5 + 's';
-                circle.style.animationDuration = (10 + Math.random() * 10) + 's';
-                section.style.position = 'relative';
-                section.style.overflow = 'hidden';
-                section.appendChild(circle);
-            }
-        }
-    });
-}
+//     [about, services, contact].forEach(section => {
+//         if (section) {
+//             for (let i = 0; i < 3; i++) {
+//                 const circle = document.createElement('div');
+//                 circle.className = 'floating-circle';
+//                 circle.style.left = Math.random() * 100 + '%';
+//                 circle.style.top = Math.random() * 100 + '%';
+//                 circle.style.animationDelay = Math.random() * 5 + 's';
+//                 circle.style.animationDuration = (10 + Math.random() * 10) + 's';
+//                 section.style.position = 'relative';
+//                 section.style.overflow = 'hidden';
+//                 section.appendChild(circle);
+//             }
+//         }
+//     });
+// }
 
-createFloatingCircles();
+// createFloatingCircles();
 
 // Add stagger animation to tab contents
 document.addEventListener('DOMContentLoaded', () => {
@@ -108,33 +108,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Smooth reveal for contact info
-const observerOptions = {
-    threshold: 0.3
-};
+// Removed contact reveal animations for static appearance
+// const observerOptions = {
+//     threshold: 0.3
+// };
 
-const contactObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'slideInLeft 0.8s ease forwards';
-        }
-    });
-}, observerOptions);
+// const contactObserver = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.style.animation = 'slideInLeft 0.8s ease forwards';
+//         }
+//     });
+// }, observerOptions);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const contactLeft = document.querySelector('.contact-left');
-    const contactRight = document.querySelector('.contact-right');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const contactLeft = document.querySelector('.contact-left');
+//     const contactRight = document.querySelector('.contact-right');
     
-    if (contactLeft) {
-        contactLeft.style.opacity = '0';
-        contactObserver.observe(contactLeft);
-    }
+//     if (contactLeft) {
+//         contactLeft.style.opacity = '0';
+//         contactObserver.observe(contactLeft);
+//     }
     
-    if (contactRight) {
-        contactRight.style.opacity = '0';
-        contactRight.style.animation = 'slideInRight 0.8s ease forwards 0.2s';
-    }
-});
+//     if (contactRight) {
+//         contactRight.style.opacity = '0';
+//         contactRight.style.animation = 'slideInRight 0.8s ease forwards 0.2s';
+//     }
+// });
 
 // Add animation for certificate hover
 document.addEventListener('DOMContentLoaded', () => {
