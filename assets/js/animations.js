@@ -84,50 +84,107 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = scrolled + '%';
 });
 
-// Enhanced cursor effect with optimized performance
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-document.body.appendChild(cursor);
-
-const cursorDot = document.createElement('div');
-cursorDot.className = 'cursor-dot';
-document.body.appendChild(cursorDot);
-
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-let dotX = 0, dotY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+// Parallax Scrolling Effect (only on desktop)
+window.addEventListener('scroll', () => {
+    // Disable parallax on mobile for performance
+    if (window.innerWidth <= 859) {
+        // Reset transform on mobile
+        const parallaxElements = document.querySelectorAll('.header-text, nav');
+        parallaxElements.forEach(el => {
+            el.style.transform = 'none';
+        });
+        return;
+    }
+    
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.header-text, nav');
+    
+    parallaxElements.forEach(el => {
+        const speed = 0.5;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+    });
 });
 
-// Use requestAnimationFrame for smooth animation
-function animateCursor() {
-    // Instant cursor movement
-    cursorX = mouseX;
-    cursorY = mouseY;
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+// Parallax Scrolling Effect
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.header-text, nav');
     
-    // Smooth dot movement with easing
-    dotX += (mouseX - dotX) * 0.15;
-    dotY += (mouseY - dotY) * 0.15;
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
-    
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-// Add cursor hover effect for clickable elements
-const clickables = document.querySelectorAll('a, button, .tab-links, .certificate');
-clickables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('cursor-hover');
-        cursorDot.classList.add('cursor-hover');
+    parallaxElements.forEach(el => {
+        const speed = 0.5;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
     });
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('cursor-hover');
-        cursorDot.classList.remove('cursor-hover');
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn, .btn2, .hero-btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+});
+
+// Magnetic effect for service cards (only on desktop)
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceCards = document.querySelectorAll('.services-list div');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            // Disable magnetic effect on mobile/tablet
+            if (window.innerWidth <= 859) return;
+            
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1) rotateX(0) rotateY(0)';
+        });
+    });
+});
+
+// Tilt effect on certificates (only on desktop)
+document.addEventListener('DOMContentLoaded', () => {
+    const certificates = document.querySelectorAll('.certificate');
+    
+    certificates.forEach(cert => {
+        cert.addEventListener('mousemove', (e) => {
+            // Disable tilt effect on mobile/tablet
+            if (window.innerWidth <= 859) return;
+            
+            const rect = cert.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            cert.style.transform = `translateY(-5px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+        
+        cert.addEventListener('mouseleave', () => {
+            cert.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
     });
 });
