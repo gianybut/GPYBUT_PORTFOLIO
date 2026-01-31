@@ -6,22 +6,25 @@
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/656fefcf5f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<nav>
+    <img src="assets/images/logo.png" class="logo" id="logo">
+    <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+    </ul>
+    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+</nav>
 <div id="header">
     <div class="container">
-        <nav>
-            <img src="assets/images/logo.png" class="logo" id="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
         <div class="header-text">
             <p>Front-end Developer</p>
             <h1>Hi, I am <span>Gian Ybut</span><br>From Philippines</h1>
@@ -37,9 +40,9 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>I am a third-year Computer Science student with a strong interest in front-end development and user-focused design. 
-                    I enjoy building clean, responsive websites using HTML, CSS, and JavaScript, and I’m continuously learning how to turn ideas into functional and visually appealing web experiences. 
-                    I’m passionate about improving my skills, working on real-world projects, and growing as a future software developer.
+                <p>I am a third-year Computer Science student with a background in front-end development and a growing interest in data analytics. 
+                    I enjoy building clean, responsive web interfaces using HTML, CSS, and JavaScript, and I’m currently exploring how data can be transformed into clear, user-friendly dashboards and data-driven interfaces. 
+                    I’m motivated to learn, work on real-world projects, and continuously improve my technical and analytical skills.
                 </p>
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
@@ -103,32 +106,39 @@
         <h1 class="sub-title">Certificates</h1>
         <div class="certification-list">
             <div class="certificate">
-                <img src="assets/images/certificate-1.jpg">
+                <img src="assets/images/certificate-1.jpg" alt="Certificate 1">
                 <div class="layer">
                     <h3>Certificate of Participation</h3>
                     <p>QCSP Lecture Series: Introduction to Quantum Natural Language Processing</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="assets/images/certificate-1.jpg" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
             <div class="certificate">
-                <img src="assets/images/certificate-2.jpg">
+                <img src="assets/images/certificate-2.jpg" alt="Certificate 2">
                 <div class="layer">
                     <h3>Certificate of Participation</h3>
                     <p>START: Fundamentals of Git and GitHub</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="assets/images/certificate-2.jpg" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
             <div class="certificate">
-                <img src="assets/images/certificate-3.jpg">
+                <img src="assets/images/certificate-3.jpg" alt="Certificate 3">
                 <div class="layer">
                     <h3>Statement of Achievement</h3>
                     <p>Cisco Networking Academy: JavaScript Essentials 1</p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="assets/images/certificate-3.jpg" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
         </div>
         <a href="#" class="btn">See more</a>
     </div>
+</div>
+
+<!-- Certificate Modal -->
+<div id="certificateModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
 </div>
 
 <!-- contact -->
@@ -210,6 +220,9 @@
 			.catch(error => console.error('Error!', error.message))
 	})
 </script>
+
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/extra-animations.js"></script>
 
 </body>
 </html>
