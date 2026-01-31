@@ -12,6 +12,117 @@ html{
 body{
     background-color: #181818;
     color: white;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #38b6ff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #38b6ff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease;
+    will-change: transform;
+    margin-left: -4px;
+    margin-top: -4px;
+}
+
+.custom-cursor.cursor-hover {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(56, 182, 255, 0.1);
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+.cursor-dot.cursor-hover {
+    width: 15px;
+    height: 15px;
+    margin-left: -7.5px;
+    margin-top: -7.5px;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #38b6ff, #257aab);
+    z-index: 9998;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px #38b6ff;
+}
+
+/* Particle Background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(56, 182, 255, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #header{
@@ -20,9 +131,13 @@ body{
     background-image: url('../images/background.png');
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
 }
 .container{
     padding: 10px 10%;
+    position: relative;
+    z-index: 1;
 }
 
 #logo{
@@ -71,7 +186,32 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
+    background: linear-gradient(45deg, #38b6ff, #5ce1e6, #38b6ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 3s ease infinite;
+    display: inline-block;
+    position: relative;
+}
+
+.header-text h1 span::after {
+    content: '|';
     color: #38b6ff;
+    animation: blink 0.7s infinite;
+    -webkit-text-fill-color: #38b6ff;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 /*---------about---------*/
 #about{
@@ -101,6 +241,25 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: white;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.sub-title::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #38b6ff, transparent);
+    animation: underlineGrow 2s ease infinite;
+}
+
+@keyframes underlineGrow {
+    0%, 100% { width: 100px; }
+    50% { width: 150px; }
 }
 
 .tab-titles{
@@ -134,10 +293,26 @@ nav ul li a:hover::after{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
 }
+
+.tab-contents ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #38b6ff;
+    font-size: 18px;
+}
+
 .tab-contents ul li span{
     color: #309ddc;
     font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #38b6ff, #5ce1e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .tab-contents{
@@ -164,7 +339,25 @@ nav ul li a:hover::after{
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.services-list div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(56, 182, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.services-list div:hover::before {
+    left: 100%;
 }
 
 .services-list div i{
@@ -186,10 +379,11 @@ nav ul li a:hover::after{
 }
 
 .services-list div:hover{
-    background: #38b6ff;
-    transform: translateY(-10px);
+    background: linear-gradient(135deg, #38b6ff 0%, #257aab 100%);
+    transform: translateY(-10px) scale(1.02);
     cursor: pointer;
-    transition: 0.5s;
+    box-shadow: 0 10px 40px rgba(56, 182, 255, 0.4);
+    border: 1px solid #38b6ff;
 }
 
 /*---------portfolio---------*/
@@ -209,6 +403,13 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.certificate:hover {
+    box-shadow: 0 15px 40px rgba(56, 182, 255, 0.3);
+    transform: translateY(-5px);
 }
 .certificate img{
     width: 100%;
@@ -268,18 +469,37 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #38b6ff;
+    border: 2px solid #38b6ff;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
     color: white;
-    transition: background 0.5s;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #38b6ff, #257aab);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
 }
 
 .btn:hover{
-    background: #38b6ff;
     cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(56, 182, 255, 0.4);
 }
 
 /*---------contact---------*/
@@ -311,7 +531,8 @@ nav ul li a:hover::after{
 }
 .social-icons a:hover{
     color: #38b6ff;
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(5deg);
+    filter: drop-shadow(0 5px 10px rgba(56, 182, 255, 0.5));
 }
 
 .btn.btn2{
@@ -324,7 +545,7 @@ nav ul li a:hover::after{
 }
 form input, form textarea{
     width: 100%;
-    border: 0;
+    border: 2px solid transparent;
     outline: none;
     background: #262626;
     padding: 15px;
@@ -332,6 +553,13 @@ form input, form textarea{
     color: white;
     font-size: 18px;
     border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus{
+    border: 2px solid #38b6ff;
+    background: #2a2a2a;
+    box-shadow: 0 0 15px rgba(56, 182, 255, 0.2);
 }
 form .btn2{
     padding: 14px 60px;
@@ -349,6 +577,26 @@ form .btn2{
     margin-top: 20px;
 }
 
+/* Loading animation for page */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-text {
+    animation: fadeInUp 1s ease;
+}
+
+nav {
+    animation: fadeInUp 0.8s ease;
+}
+
 /* css for small screens */
 
 nav .fa-solid, nav .fa-regular{
@@ -356,6 +604,14 @@ nav .fa-solid, nav .fa-regular{
 }
 
 @media only screen and (max-width: 859px){
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor, .cursor-dot {
+        display: none;
+    }
+    
     #header{
         background-image: url('../images/phone-background.png');
     }
