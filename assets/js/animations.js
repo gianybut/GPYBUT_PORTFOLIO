@@ -1,193 +1,89 @@
-// Typing Animation
-const typingText = document.querySelector('.header-text h1 span');
-const originalText = typingText.textContent;
-typingText.textContent = '';
+// Force scroll to top on page load with multiple attempts
+let scrollToTopAttempts = 0;
+const maxAttempts = 10;
 
-let charIndex = 0;
-function typeWriter() {
-    if (charIndex < originalText.length) {
-        typingText.textContent += originalText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, 150);
-    }
+function forceScrollToTop() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 }
 
-// Start typing animation after a short delay
-setTimeout(typeWriter, 500);
+// Immediate scroll to top
+forceScrollToTop();
 
-// Particle Background Effect
-function createParticles() {
-    const header = document.getElementById('header');
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'particles';
-    header.insertBefore(particlesContainer, header.firstChild);
+// On DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    forceScrollToTop();
+    // Additional attempts to override browser scroll restoration
+    setTimeout(forceScrollToTop, 100);
+    setTimeout(forceScrollToTop, 500);
+});
 
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        particlesContainer.appendChild(particle);
-    }
-}
-
-createParticles();
-
-// Hide particles when scrolling for cleaner appearance
-window.addEventListener('scroll', () => {
-    const particlesContainer = document.querySelector('.particles');
-    if (particlesContainer) {
-        if (window.scrollY > 100) {
-            particlesContainer.style.opacity = '0';
+// On full page load
+window.addEventListener('load', () => {
+    forceScrollToTop();
+    // Keep forcing until we know it's at top
+    let interval = setInterval(() => {
+        if (scrollToTopAttempts < maxAttempts) {
+            forceScrollToTop();
+            scrollToTopAttempts++;
         } else {
-            particlesContainer.style.opacity = '1';
+            clearInterval(interval);
         }
+    }, 50);
+});
+
+// Also prevent history scroll restoration
+if (window.history.scrollRestoration) {
+    window.history.scrollRestoration = 'manual';
+}
+
+// Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / docHeight) * 100;
+    document.querySelector('.scroll-progress').style.width = scrolled + '%';
+    
+    // Parallax text effect for hero section
+    const heroContainer = document.querySelector('#header .container');
+    if (heroContainer) {
+        heroContainer.style.transform = `translateY(${scrollTop * 0.03}px)`;
     }
 });
 
-// Scroll Reveal Animation
+// Intersection Observer for reveal animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
 };
 
-// Removed scroll reveal animations for static appearance
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('reveal-active');
-//         }
-//     });
-// }, observerOptions);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
-// Add reveal class to sections
-// document.addEventListener('DOMContentLoaded', () => {
-//     const revealElements = document.querySelectorAll('#about, #services, #portfolio, #contact');
-//     revealElements.forEach(el => {
-//         el.classList.add('reveal');
-//         observer.observe(el);
-//     });
-
-//     // Animate service cards on scroll
-//     const serviceCards = document.querySelectorAll('.services-list div');
-//     serviceCards.forEach((card, index) => {
-//         card.classList.add('reveal');
-//         card.style.transitionDelay = `${index * 0.2}s`;
-//         observer.observe(card);
-//     });
-
-//     // Animate certificates on scroll
-//     const certificates = document.querySelectorAll('.certificate');
-//     certificates.forEach((cert, index) => {
-//         cert.classList.add('reveal');
-//         cert.style.transitionDelay = `${index * 0.15}s`;
-//         observer.observe(cert);
-//     });
-// });
-
-// Add smooth scroll progress indicator
-const progressBar = document.createElement('div');
-progressBar.className = 'scroll-progress';
-document.body.appendChild(progressBar);
-
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.scrollY / windowHeight) * 100;
-    progressBar.style.width = scrolled + '%';
+// Observe all reveal elements
+document.querySelectorAll('.reveal, .reveal-card').forEach(el => {
+    observer.observe(el);
 });
 
-// Parallax Scrolling Effect (only on desktop)
-window.addEventListener('scroll', () => {
-    // Disable parallax on mobile for performance
-    if (window.innerWidth <= 859) {
-        // Reset transform on mobile
-        const parallaxElements = document.querySelectorAll('.header-text');
-        parallaxElements.forEach(el => {
-            el.style.transform = 'none';
-        });
-        return;
+// Typing effect
+const typingElement = document.querySelector('.typing-text');
+const text = 'Gian Ybut';
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        typingElement.textContent = text.substring(0, index + 1);
+        index++;
+        setTimeout(typeWriter, 1.5 * 1000 / text.length); // 1.5 seconds total
     }
-    
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.header-text');
-    
-    parallaxElements.forEach(el => {
-        const speed = 0.5;
-        el.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.btn, .btn2, .hero-btn');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple-effect');
-            
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-});
-
-// Magnetic effect for service cards (only on desktop)
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceCards = document.querySelectorAll('.services-list div');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            // Disable magnetic effect on mobile/tablet
-            if (window.innerWidth <= 859) return;
-            
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0) scale(1) rotateX(0) rotateY(0)';
-        });
-    });
-});
-
-// Tilt effect on certificates (only on desktop)
-document.addEventListener('DOMContentLoaded', () => {
-    const certificates = document.querySelectorAll('.certificate');
-    
-    certificates.forEach(cert => {
-        cert.addEventListener('mousemove', (e) => {
-            // Disable tilt effect on mobile/tablet
-            if (window.innerWidth <= 859) return;
-            
-            const rect = cert.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            cert.style.transform = `translateY(-5px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        });
-        
-        cert.addEventListener('mouseleave', () => {
-            cert.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
-    });
-});
+// Start typing when page loads
+typeWriter();
