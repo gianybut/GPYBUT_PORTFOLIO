@@ -101,6 +101,20 @@ PORTFOLIO/
     └── projects.html        # Projects section (optional)
 ```
 
+## 📚 Featured Projects
+
+### 1. **Dishcovery** - Recipe Search Application
+   - **Description**: A web app for searching recipes by ingredients with user authentication and favorites
+   - **Tech Stack**: Flask, SQLite, JavaScript
+   - **Features**: User authentication, favorites management, TheMealDB API integration
+   - **Repository**: [github.com/gianybut/dishcovery](https://github.com/gianybut/dishcovery)
+
+### 2. **SPONTRIP** - Mood-Based Travel & Activity Recommender
+   - **Description**: Personalized travel and activity recommendations based on user's mood and preferences
+   - **Tech Stack**: React, Node.js, MongoDB
+   - **Features**: Mood analysis, activity recommendations, travel suggestions, user preferences
+   - **Repository**: [github.com/gianybut/SPONTRIP](https://github.com/gianybut/SPONTRIP)
+
 ## 🚀 Installation & Setup
 
 ### Quick Start (No Server Required)
