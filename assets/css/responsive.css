@@ -1,0 +1,115 @@
+/* Responsive grid */
+@media (max-width: 1024px) {
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .lg\:grid-cols-3 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .lg\:grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .lg\:px-20 { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+    .md\:text-2xl { font-size: 1.5rem; }
+    .md\:text-5xl { font-size: 3rem; }
+    .md\:text-6xl { font-size: 3.75rem; }
+}
+
+/* Responsive display */
+@media (min-width: 1024px) {
+    .lg\:flex { display: flex; }
+    .lg\:grid { display: grid; }
+    .lg\:hidden { display: none; }
+    .lg\:px-20 { padding-left: 5rem; padding-right: 5rem; }
+}
+
+/* Mobile menu */
+@media (max-width: 1023px) {
+    #sidemenu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 250px;
+        height: 100vh;
+        background: rgba(56, 182, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding-top: 50px;
+        z-index: 60;
+        display: flex !important;
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 2rem;
+    }
+    
+    #sidemenu.active {
+        right: 0;
+    }
+}
+
+/* iPhone SE (375px) responsive fixes */
+@media (max-width: 480px) {
+    nav {
+        padding: 15px 1rem !important;
+    }
+    
+    #header .container {
+        padding-top: 2rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 1.875rem !important;
+    }
+    
+    .text-5xl {
+        font-size: 2rem !important;
+    }
+    
+    .text-6xl {
+        font-size: 2.25rem !important;
+    }
+    
+    .text-7xl {
+        font-size: 2.5rem !important;
+    }
+    
+    #about .container,
+    #services .container,
+    #portfolio .container,
+    #certificates .container,
+    #contact .container {
+        padding: 10px 1rem !important;
+    }
+    
+    .grid.lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .gap-12 {
+        gap: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .flex.gap-4.mb-6 {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    
+    .tab-links {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    .reveal-card:nth-child(2).active,
+    .reveal-card:nth-child(3).active {
+        transition-delay: 0s !important;
+    }
+    
+    #about::before {
+        height: 60px !important;
+        top: 0 !important;
+    }
+}
