@@ -108,19 +108,33 @@ button[class*="from-primary"][class*="to-secondary"] {
 /* Tab styles */
 .tab-contents {
     display: none;
+    opacity: 0;
 }
 
 .tab-contents.active-tab {
     display: block;
+    animation: swipeFromLeft 0.5s ease-in-out forwards;
 }
 
 .tab-links {
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .tab-links.active-link {
     color: #38b6ff;
     border-bottom-color: #38b6ff;
+}
+
+@keyframes swipeFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Hero parallax effect */
