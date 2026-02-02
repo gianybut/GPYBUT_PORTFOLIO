@@ -50,6 +50,9 @@ window.addEventListener('scroll', () => {
     if (heroContainer) {
         heroContainer.style.transform = `translateY(${scrollTop * 0.03}px)`;
     }
+    
+    // Update active nav link based on scroll position
+    updateActiveNavLink();
 });
 
 // Intersection Observer for reveal animations
@@ -87,3 +90,47 @@ function typeWriter() {
 
 // Start typing when page loads
 typeWriter();
+
+// Update active nav link based on section visibility
+function updateActiveNavLink() {
+    const sections = [
+        { id: 'header', navHref: 'javascript:void(0)' },
+        { id: 'about', navHref: '#about' },
+        { id: 'services', navHref: '#services' },
+        { id: 'portfolio', navHref: '#portfolio' },
+        { id: 'certificates', navHref: '#certificates' },
+        { id: 'contact', navHref: '#contact' }
+    ];
+    
+    const scrollTop = window.scrollY;
+    const triggerOffset = 100; // offset from top
+    
+    // Remove active class from all nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active-nav');
+    });
+    
+    // Find which section is in view and set active
+    for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i].id);
+        if (section) {
+            const sectionTop = section.offsetTop;
+            if (scrollTop >= sectionTop - triggerOffset) {
+                // Find the nav link for this section
+                const navLink = document.querySelector(`.nav-link[href="${sections[i].navHref}"]`);
+                if (navLink) {
+                    navLink.classList.add('active-nav');
+                }
+                break;
+            }
+        }
+    }
+    
+    // If we're at the very top, make Home active
+    if (scrollTop < 200) {
+        const homeLink = document.querySelector('.nav-link[href="javascript:void(0)"]');
+        if (homeLink) {
+            homeLink.classList.add('active-nav');
+        }
+    }
+}
