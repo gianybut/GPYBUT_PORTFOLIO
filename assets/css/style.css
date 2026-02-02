@@ -47,6 +47,40 @@ button[class*="from-primary"][class*="to-secondary"] {
     color: white !important;
 }
 
+/* Navigation links active state */
+.nav-link {
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active-nav {
+    color: #38b6ff !important;
+}
+
+.nav-link.active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #38b6ff, #5ce1e6);
+    border-radius: 2px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        left: 50%;
+    }
+    to {
+        width: 100%;
+        left: 0;
+    }
+}
+
 /* Glass effect */
 .glass {
     background: rgba(255, 255, 255, 0.05);
