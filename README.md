@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my skills, projects, achieveme
 
 ## 🌐 Live Demo
 
-Visit the live portfolio: [Link to your hosted site]
+Visit the live portfolio: [https://gianybut.github.io/GPYBUT_PORTFOLIO/]
 
 ## 📋 Table of Contents
 
