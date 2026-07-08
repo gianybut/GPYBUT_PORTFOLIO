@@ -1,432 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gian Ybut - Portfolio</title>
-    <meta name="description" content="Portfolio of Gian Ybut - Front-end Developer and Computer Science Student specializing in web development and data analytics">
-    
+    <meta name="description"
+        content="Portfolio of Gian Ybut - Front-end Developer and Computer Science Student specializing in web development and data analytics">
+
     <!-- Tailwind CSS Play CDN - Works with file:// protocol -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    
+
     <script src="https://kit.fontawesome.com/656fefcf5f.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- External CSS Files -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body class="bg-dark text-white">
 
-<!-- Scroll Progress Bar -->
-<div class="scroll-progress"></div>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
 
-<!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 px-8 lg:px-20 py-5 transition-all duration-300">
-    <div class="flex justify-between items-center max-w-7xl mx-auto">
-        <img src="assets/images/logo.png" class="h-14 w-auto drop-shadow-lg" alt="Logo">
-        <ul id="sidemenu" class="hidden lg:flex gap-8 items-center">
-            <li><a href="javascript:void(0)" onclick="scrollToHome()" class="nav-link active-nav text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Home</a></li>
-            <li><a href="#about" class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">About</a></li>
-            <li><a href="#services" class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Services</a></li>
-            <li><a href="#portfolio" class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Projects</a></li>
-            <li><a href="#certificates" class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Certificates</a></li>
-            <li><a href="#contact" class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Contact</a></li>
-            <i class="fa-regular fa-circle-xmark text-2xl cursor-pointer lg:hidden" onclick="closemenu()"></i>
-        </ul>
-        <i class="fa-solid fa-bars text-2xl cursor-pointer lg:hidden" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);" onclick="openmenu()"></i>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<div id="header" class="fixed inset-0 flex items-center justify-center overflow-hidden z-0">
-    <!-- Background image -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/background.png');"></div>
-    
-    <!-- Animated gradient overlay -->
-    <div class="absolute inset-0 animated-gradient opacity-80"></div>
-    
-    <!-- Decorative elements -->
-    <div class="absolute top-20 left-10 w-72 h-72 bg-primary opacity-20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary opacity-20 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-8 lg:px-20 pt-24 relative z-1">
-        <div class="max-w-4xl">
-            <p class="text-primary text-xl md:text-2xl font-semibold mb-4">Front-end Developer</p>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Hi, I am <span class="typing-text gradient-text">Gian Ybut</span><br>
-                <span class="text-3xl md:text-5xl lg:text-6xl text-gray-300">From Philippines</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl">
-                Computer Science student passionate about creating beautiful, functional web experiences
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
-                    Get In Touch
-                </a>
-                <a href="#portfolio" class="px-8 py-3 glass text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                    View Projects
-                </a>
-            </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-8 lg:px-20 py-5 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <img src="assets/images/logo.png" class="h-14 w-auto drop-shadow-lg" alt="Logo">
+            <ul id="sidemenu" class="hidden lg:flex gap-8 items-center">
+                <li><a href="javascript:void(0)" onclick="scrollToHome()"
+                        class="nav-link active-nav text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Home</a></li>
+                <li><a href="#about"
+                        class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">About</a></li>
+                <li><a href="#services"
+                        class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Services</a></li>
+                <li><a href="#portfolio"
+                        class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Projects</a></li>
+                <li><a href="#certificates"
+                        class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Certificates</a></li>
+                <li><a href="#contact"
+                        class="nav-link text-white hover:text-primary transition-colors duration-300 font-medium"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Contact</a></li>
+                <i class="fa-regular fa-circle-xmark text-2xl cursor-pointer lg:hidden" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars text-2xl cursor-pointer lg:hidden"
+                style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);" onclick="openmenu()"></i>
         </div>
-    </div>
-</div>
+    </nav>
 
-<!-- Spacer for fixed hero -->
-<div class="h-screen"></div>
+    <!-- Hero Section -->
+    <div id="header" class="fixed inset-0 flex items-center justify-center overflow-hidden z-0">
+        <!-- Background image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('assets/images/background.png');"></div>
 
-<!-- About Section -->
-<div id="about" class="py-20 bg-dark-light relative z-10">
-    <div class="container mx-auto px-8 lg:px-20">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="relative floating">
-                <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-20 rounded-3xl blur-xl" style="transform: scaleX(0.75);"></div>
-                <img src="assets/images/user.png" class="relative rounded-3xl shadow-md w-full max-w-md mx-auto" alt="Gian Ybut">
-            </div>
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    About <span class="gradient-text">Me</span>
-                </h2>
-                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                    I am a third-year Computer Science student with a background in front-end development and a growing interest in data analytics. 
-                    I enjoy building clean, responsive web interfaces using HTML, CSS, and JavaScript, and I'm currently exploring how data can be transformed into clear, user-friendly dashboards and data-driven interfaces. 
-                    I'm motivated to learn, work on real-world projects, and continuously improve my technical and analytical skills.
+        <!-- Animated gradient overlay -->
+        <div class="absolute inset-0 animated-gradient opacity-80"></div>
+
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary opacity-20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary opacity-20 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-8 lg:px-20 pt-24 relative z-1">
+            <div class="max-w-4xl">
+                <p class="text-primary text-xl md:text-2xl font-semibold mb-4">Full-Stack Developer</p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Hi, I am <span class="typing-text gradient-text">Gian Ybut</span><br>
+                    <span class="text-3xl md:text-5xl lg:text-6xl text-gray-300">From Philippines</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl">
+                    Computer Science student passionate about creating beautiful, functional web experiences
                 </p>
-                
-                <!-- Tabs -->
-                <div class="flex gap-4 mb-6 border-b border-gray-700">
-                    <button class="tab-links active-link px-6 py-3 font-semibold transition-all border-b-2" onclick="opentab('Skills')">
-                        Skills
-                    </button>
-                    <button class="tab-links px-6 py-3 font-semibold text-gray-400 hover:text-primary transition-all border-b-2 border-transparent" onclick="opentab('Achievements')">
-                        Achievements
-                    </button>
-                    <button class="tab-links px-6 py-3 font-semibold text-gray-400 hover:text-primary transition-all border-b-2 border-transparent" onclick="opentab('Education')">
-                        Education
-                    </button>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                    <a href="#portfolio"
+                        class="px-8 py-3 glass text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
                 </div>
-                
-                <div class="tab-contents active-tab" id="Skills">
-                    <div class="space-y-4">
-                        <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
-                            <h3 class="font-semibold text-primary mb-2">Front-end Dev</h3>
-                            <p class="text-gray-400">Designing Web interfaces</p>
-                        </div>
-                        <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
-                            <h3 class="font-semibold text-primary mb-2">Web Development</h3>
-                            <p class="text-gray-400">HTML, CSS, Javascript</p>
-                        </div>
-                        <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
-                            <h3 class="font-semibold text-primary mb-2">Java Fundamentals</h3>
-                            <p class="text-gray-400">Arrays, Linked Lists, Stacks, Queues</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer for fixed hero -->
+    <div class="h-screen"></div>
+
+    <!-- About Section -->
+    <div id="about" class="py-20 bg-dark-light relative z-10">
+        <div class="container mx-auto px-8 lg:px-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative floating">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-20 rounded-3xl blur-xl"
+                        style="transform: scaleX(0.75);"></div>
+                    <img src="assets/images/user.png" class="relative rounded-3xl shadow-md w-full max-w-md mx-auto"
+                        alt="Gian Ybut">
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        I am a third-year Computer Science student with a background in front-end development and a
+                        growing interest in data analytics.
+                        I enjoy building clean, responsive web interfaces using HTML, CSS, and JavaScript, and I'm
+                        currently exploring how data can be transformed into clear, user-friendly dashboards and
+                        data-driven interfaces.
+                        I'm motivated to learn, work on real-world projects, and continuously improve my technical and
+                        analytical skills.
+                    </p>
+
+                    <!-- Tabs -->
+                    <div class="flex gap-4 mb-6 border-b border-gray-700">
+                        <button class="tab-links active-link px-6 py-3 font-semibold transition-all border-b-2"
+                            onclick="opentab('Skills')">
+                            Skills
+                        </button>
+                        <button
+                            class="tab-links px-6 py-3 font-semibold text-gray-400 hover:text-primary transition-all border-b-2 border-transparent"
+                            onclick="opentab('Achievements')">
+                            Achievements
+                        </button>
+                        <button
+                            class="tab-links px-6 py-3 font-semibold text-gray-400 hover:text-primary transition-all border-b-2 border-transparent"
+                            onclick="opentab('Education')">
+                            Education
+                        </button>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="Skills">
+                        <div class="space-y-4">
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
+                                <h3 class="font-semibold text-primary mb-2">Front-end Dev</h3>
+                                <p class="text-gray-400">Designing Web interfaces</p>
+                            </div>
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
+                                <h3 class="font-semibold text-primary mb-2">Web Development</h3>
+                                <p class="text-gray-400">HTML, CSS, Javascript</p>
+                            </div>
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">
+                                <h3 class="font-semibold text-primary mb-2">Java Fundamentals</h3>
+                                <p class="text-gray-400">Arrays, Linked Lists, Stacks, Queues</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="tab-contents" id="Achievements">
-                    <div class="space-y-4">
+
+                    <div class="tab-contents" id="Achievements">
+                        <div class="space-y-4">
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
+                                <h3 class="font-semibold text-secondary mb-2">Dean's Lister</h3>
+                                <p class="text-gray-400">Recipient for 5 semesters - De La Salle University - Dasmariñas
+                                </p>
+                            </div>
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
+                                <h3 class="font-semibold text-secondary mb-2">TOEIC Certification</h3>
+                                <p class="text-gray-400">English Proficiency Test - Successfully Completed</p>
+                            </div>
+                            <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
+                                <h3 class="font-semibold text-secondary mb-2">Tech Factor Award</h3>
+                                <p class="text-gray-400">Best in Information Technology - High School</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-contents" id="Education">
                         <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
-                            <h3 class="font-semibold text-secondary mb-2">Dean's Lister</h3>
-                            <p class="text-gray-400">Recipient for 5 semesters - De La Salle University - Dasmariñas</p>
-                        </div>
-                        <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
-                            <h3 class="font-semibold text-secondary mb-2">TOEIC Certification</h3>
-                            <p class="text-gray-400">English Proficiency Test - Successfully Completed</p>
-                        </div>
-                        <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
-                            <h3 class="font-semibold text-secondary mb-2">Tech Factor Award</h3>
-                            <p class="text-gray-400">Best in Information Technology - High School</p>
+                            <h3 class="font-semibold text-secondary mb-2">2023 – Present</h3>
+                            <p class="text-gray-400">BS in Computer Science at De La Salle University – Dasmariñas</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="tab-contents" id="Education">
-                    <div class="glass p-4 rounded-lg hover:shadow-lg hover:shadow-secondary/20 transition-all">
-                        <h3 class="font-semibold text-secondary mb-2">2023 – Present</h3>
-                        <p class="text-gray-400">BS in Computer Science at De La Salle University – Dasmariñas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="py-20 bg-dark relative z-20">
+        <div class="container mx-auto px-8 lg:px-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                My <span class="gradient-text">Services</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
+                    <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
+                        <i class="fa-solid fa-compass-drafting"></i>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Web Design</h3>
+                    <p class="text-gray-400 mb-6">I design clean, modern, and responsive website layouts that focus on
+                        usability and visual clarity, ensuring a smooth experience across different devices.</p>
+                    <a href="#"
+                        class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                        Learn more <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
+                    <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Web Development</h3>
+                    <p class="text-gray-400 mb-6">I build functional and interactive websites using HTML, CSS, and
+                        JavaScript, focusing on performance, responsiveness, and clean code structure.</p>
+                    <a href="#"
+                        class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                        Learn more <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
+                    <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
+                        <i class="fa-brands fa-uikit"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">UI/UX Design</h3>
+                    <p class="text-gray-400 mb-6">I create user-centered interface designs by considering layout, color,
+                        and user flow to improve accessibility and overall user experience.</p>
+                    <a href="#"
+                        class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                        Learn more <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Services Section -->
-<div id="services" class="py-20 bg-dark relative z-20">
-    <div class="container mx-auto px-8 lg:px-20">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-            My <span class="gradient-text">Services</span>
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service Card 1 -->
-            <div class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
-                <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
-                    <i class="fa-solid fa-compass-drafting"></i>
+    <!-- Projects Section -->
+    <div id="portfolio" class="py-20 bg-dark-light relative z-30">
+        <div class="container mx-auto px-8 lg:px-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="gradient-text">Projects</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Work 1 - Dishcovery -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                        <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <h3 class="text-2xl font-bold text-white">Dishcovery</h3>
+                            <span
+                                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                Beginner
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">A web app for searching recipes by ingredients with user
+                            authentication and favorites. Built with Flask backend, SQLite database, and integrated with
+                            the TheMealDB API.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Flask</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">SQLite</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/gianybut/dishcovery" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                            View on GitHub <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Web Design</h3>
-                <p class="text-gray-400 mb-6">I design clean, modern, and responsive website layouts that focus on usability and visual clarity, ensuring a smooth experience across different devices.</p>
-                <a href="#" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                    Learn more <i class="fa-solid fa-arrow-right"></i>
+
+                <!-- Work 2 - SPONTRIP -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                        <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fa-solid fa-map"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <h3 class="text-2xl font-bold text-white">SPONTRIP</h3>
+                            <span
+                                class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                Intermediate
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">A mood-based travel and activity recommender that suggests
+                            personalized destinations and activities based on user's current mood and preferences.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/gianybut/SPONTRIP" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                            View on GitHub <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Work 3 - ViaSense AI (Road Damage Detection) -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                        <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <h3 class="text-2xl font-bold text-white">ViaSense AI</h3>
+                            <span
+                                class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                                Thesis
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">A mobile and AI computer vision system for real-time road damage
+                            detection and mapping. Features a React Native app for GPS-tagged camera analysis and a
+                            Flask backend running YOLOv5s to classify road distress (cracks, potholes).</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">React Native</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">Flask</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">YOLOv5</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">SQLite</span>
+                        </div>
+                        <a href="https://github.com/gianybut/road-damage-detection-main" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
+                            View on GitHub <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://github.com/gianybut" target="_blank"
+                    class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
+                    View All on GitHub
                 </a>
             </div>
-            
-            <!-- Service Card 2 -->
-            <div class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
-                <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
-                    <i class="fa-solid fa-code"></i>
+        </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <div id="certificates" class="py-20 bg-dark relative z-35">
+        <div class="container mx-auto px-8 lg:px-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                My <span class="gradient-text">Certificates</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Certificate 1 -->
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card"
+                    onclick="openModal('assets/images/certificate-1.jpg', 'Certificate of Participation - QCSP Lecture Series')">
+                    <img src="assets/images/certificate-1.jpg"
+                        class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500"
+                        alt="Certificate 1">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Certificate of Participation</h3>
+                        <p class="text-gray-300 text-sm mb-4">QCSP Lecture Series: Introduction to Quantum Natural
+                            Language Processing</p>
+                        <a href="assets/images/certificate-1.jpg" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2"
+                            onclick="event.stopPropagation()">
+                            View <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Web Development</h3>
-                <p class="text-gray-400 mb-6">I build functional and interactive websites using HTML, CSS, and JavaScript, focusing on performance, responsiveness, and clean code structure.</p>
-                <a href="#" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                    Learn more <i class="fa-solid fa-arrow-right"></i>
+
+                <!-- Certificate 2 -->
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card"
+                    onclick="openModal('assets/images/certificate-2.jpg', 'Certificate of Participation - START')">
+                    <img src="assets/images/certificate-2.jpg"
+                        class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500"
+                        alt="Certificate 2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Certificate of Participation</h3>
+                        <p class="text-gray-300 text-sm mb-4">START: Fundamentals of Git and GitHub</p>
+                        <a href="assets/images/certificate-2.jpg" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2"
+                            onclick="event.stopPropagation()">
+                            View <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card"
+                    onclick="openModal('assets/images/certificate-3.jpg', 'Statement of Achievement - Cisco')">
+                    <img src="assets/images/certificate-3.jpg"
+                        class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500"
+                        alt="Certificate 3">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Statement of Achievement</h3>
+                        <p class="text-gray-300 text-sm mb-4">Cisco Networking Academy: JavaScript Essentials 1</p>
+                        <a href="assets/images/certificate-3.jpg" target="_blank"
+                            class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2"
+                            onclick="event.stopPropagation()">
+                            View <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#"
+                    class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
+                    See more
                 </a>
             </div>
-            
-            <!-- Service Card 3 -->
-            <div class="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105 group reveal-card">
-                <div class="text-primary text-5xl mb-6 transform group-hover:scale-100 transition-transform">
-                    <i class="fa-brands fa-uikit"></i>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">UI/UX Design</h3>
-                <p class="text-gray-400 mb-6">I create user-centered interface designs by considering layout, color, and user flow to improve accessibility and overall user experience.</p>
-                <a href="#" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                    Learn more <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
         </div>
     </div>
-</div>
 
-<!-- Projects Section -->
-<div id="portfolio" class="py-20 bg-dark-light relative z-30">
-    <div class="container mx-auto px-8 lg:px-20">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        <span class="gradient-text">Projects</span>
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <!-- Work 1 - Dishcovery -->
-            <div class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
-                <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
-                    <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <h3 class="text-2xl font-bold text-white">Dishcovery</h3>
-                        <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
-                            <span class="w-2 h-2 bg-white rounded-full"></span>
-                            Beginner
-                        </span>
-                    </div>
-                    <p class="text-gray-400 mb-4">A web app for searching recipes by ingredients with user authentication and favorites. Built with Flask backend, SQLite database, and integrated with the TheMealDB API.</p>
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Flask</span>
-                        <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">SQLite</span>
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/gianybut/dishcovery" target="_blank" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                        View on GitHub <i class="fa-solid fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Work 2 - SPONTRIP -->
-            <div class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
-                <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
-                    <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-map"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <h3 class="text-2xl font-bold text-white">SPONTRIP</h3>
-                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
-                            <span class="w-2 h-2 bg-white rounded-full"></span>
-                            Intermediate
-                        </span>
-                    </div>
-                    <p class="text-gray-400 mb-4">A mood-based travel and activity recommender that suggests personalized destinations and activities based on user's current mood and preferences.</p>
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">React</span>
-                        <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">Node.js</span>
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">MongoDB</span>
-                    </div>
-                    <a href="https://github.com/gianybut/SPONTRIP" target="_blank" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                        View on GitHub <i class="fa-solid fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Work 3 - ViaSense AI (Road Damage Detection) -->
-            <div class="group relative overflow-hidden rounded-2xl bg-dark border border-gray-700 hover:border-primary transition-all duration-300 reveal-card">
-                <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
-                    <div class="text-6xl text-primary/40 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-road"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <h3 class="text-2xl font-bold text-white">ViaSense AI</h3>
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
-                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                            Thesis
-                        </span>
-                    </div>
-                    <p class="text-gray-400 mb-4">A mobile and AI computer vision system for real-time road damage detection and mapping. Features a React Native app for GPS-tagged camera analysis and a Flask backend running YOLOv5s to classify road distress (cracks, potholes).</p>
-                    <div class="flex gap-2 mb-4 flex-wrap">
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">React Native</span>
-                        <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">Flask</span>
-                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">YOLOv5</span>
-                        <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">SQLite</span>
-                    </div>
-                    <a href="https://github.com/gianybut/road-damage-detection-main" target="_blank" class="text-primary hover:text-secondary transition-colors font-semibold inline-flex items-center gap-2">
-                        View on GitHub <i class="fa-solid fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="https://github.com/gianybut" target="_blank" class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
-                View All on GitHub
-            </a>
+    <!-- Certificate Modal -->
+    <div id="certificateModal"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+        onclick="closeModal()">
+        <span class="absolute top-8 right-8 text-white text-4xl cursor-pointer hover:text-primary transition-colors"
+            onclick="closeModal()">&times;</span>
+        <div class="max-w-4xl w-full" onclick="event.stopPropagation()">
+            <img id="modalImage" class="w-full h-auto rounded-lg shadow-2xl">
+            <p id="caption" class="text-center text-white text-xl mt-4"></p>
         </div>
     </div>
-</div>
 
-<!-- Certificates Section -->
-<div id="certificates" class="py-20 bg-dark relative z-35">
-    <div class="container mx-auto px-8 lg:px-20">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-            My <span class="gradient-text">Certificates</span>
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <!-- Certificate 1 -->
-            <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card" onclick="openModal('assets/images/certificate-1.jpg', 'Certificate of Participation - QCSP Lecture Series')">
-                <img src="assets/images/certificate-1.jpg" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500" alt="Certificate 1">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Certificate of Participation</h3>
-                    <p class="text-gray-300 text-sm mb-4">QCSP Lecture Series: Introduction to Quantum Natural Language Processing</p>
-                    <a href="assets/images/certificate-1.jpg" target="_blank" class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" onclick="event.stopPropagation()">
-                        View <i class="fa-solid fa-link"></i>
+    <!-- Contact Section -->
+    <div id="contact" class="py-20 bg-dark relative z-40">
+        <div class="container mx-auto px-8 lg:px-20">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                        Contact <span class="gradient-text">Me</span>
+                    </h2>
+
+                    <div class="space-y-6 mb-8">
+                        <a href="mailto:ybutgianpaolo@gmail.com"
+                            class="flex items-center gap-4 text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-regular fa-paper-plane text-2xl"></i>
+                            <span class="text-lg">ybutgianpaolo@gmail.com</span>
+                        </a>
+                        <a href="tel:+639206022884"
+                            class="flex items-center gap-4 text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-solid fa-square-phone text-2xl"></i>
+                            <span class="text-lg">+63 920 602 2884</span>
+                        </a>
+                    </div>
+
+                    <div class="flex gap-4 mb-8">
+                        <a href="https://www.facebook.com/gpybut/"
+                            class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gpybut/"
+                            class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-square-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/gianybut"
+                            class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+
+                    <a href="files/CV_GIANYBUT.pdf" download
+                        class="px-8 py-3 glass text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
+                        <i class="fa-solid fa-download mr-2"></i> Download CV
                     </a>
                 </div>
-            </div>
-            
-            <!-- Certificate 2 -->
-            <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card" onclick="openModal('assets/images/certificate-2.jpg', 'Certificate of Participation - START')">
-                <img src="assets/images/certificate-2.jpg" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500" alt="Certificate 2">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Certificate of Participation</h3>
-                    <p class="text-gray-300 text-sm mb-4">START: Fundamentals of Git and GitHub</p>
-                    <a href="assets/images/certificate-2.jpg" target="_blank" class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" onclick="event.stopPropagation()">
-                        View <i class="fa-solid fa-link"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Certificate 3 -->
-            <div class="relative group overflow-hidden rounded-2xl cursor-pointer reveal-card" onclick="openModal('assets/images/certificate-3.jpg', 'Statement of Achievement - Cisco')">
-                <img src="assets/images/certificate-3.jpg" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500" alt="Certificate 3">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Statement of Achievement</h3>
-                    <p class="text-gray-300 text-sm mb-4">Cisco Networking Academy: JavaScript Essentials 1</p>
-                    <a href="assets/images/certificate-3.jpg" target="_blank" class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2" onclick="event.stopPropagation()">
-                        View <i class="fa-solid fa-link"></i>
-                    </a>
+
+                <!-- Contact Form -->
+                <div class="glass p-8 rounded-2xl">
+                    <form name="submit-to-google-sheet" class="space-y-6">
+                        <div>
+                            <input type="text" name="Name" placeholder="Your Name" required
+                                class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <input type="email" name="Email" placeholder="Your Email" required
+                                class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <textarea name="Message" rows="6" placeholder="Your Message" required
+                                class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn"
+                            class="w-full px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                        <span id="msg" class="block text-center text-green-400 font-semibold"></span>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <a href="#" class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
-                See more
-            </a>
+
+        <!-- Copyright -->
+        <div class="text-center mt-20 text-gray-500">
+            <p>Copyright © 2026 GPYBUT. All rights reserved.</p>
         </div>
     </div>
-</div>
 
-<!-- Certificate Modal -->
-<div id="certificateModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden items-center justify-center p-4" onclick="closeModal()">
-    <span class="absolute top-8 right-8 text-white text-4xl cursor-pointer hover:text-primary transition-colors" onclick="closeModal()">&times;</span>
-    <div class="max-w-4xl w-full" onclick="event.stopPropagation()">
-        <img id="modalImage" class="w-full h-auto rounded-lg shadow-2xl">
-        <p id="caption" class="text-center text-white text-xl mt-4"></p>
-    </div>
-</div>
-
-<!-- Contact Section -->
-<div id="contact" class="py-20 bg-dark relative z-40">
-    <div class="container mx-auto px-8 lg:px-20">
-        <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Contact Info -->
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                    Contact <span class="gradient-text">Me</span>
-                </h2>
-                
-                <div class="space-y-6 mb-8">
-                    <a href="mailto:ybutgianpaolo@gmail.com" class="flex items-center gap-4 text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa-regular fa-paper-plane text-2xl"></i>
-                        <span class="text-lg">ybutgianpaolo@gmail.com</span>
-                    </a>
-                    <a href="tel:+639206022884" class="flex items-center gap-4 text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa-solid fa-square-phone text-2xl"></i>
-                        <span class="text-lg">+63 920 602 2884</span>
-                    </a>
-                </div>
-                
-                <div class="flex gap-4 mb-8">
-                    <a href="https://www.facebook.com/gpybut/" class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
-                        <i class="fa-brands fa-square-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gpybut/" class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
-                        <i class="fa-brands fa-square-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/gianybut" class="text-4xl text-gray-400 hover:text-primary transition-all transform hover:scale-110">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-                
-                <a href="files/CV_GIANYBUT.pdf" download class="px-8 py-3 glass text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 inline-block">
-                    <i class="fa-solid fa-download mr-2"></i> Download CV
-                </a>
-            </div>
-            
-            <!-- Contact Form -->
-            <div class="glass p-8 rounded-2xl">
-                <form name="submit-to-google-sheet" class="space-y-6">
-                    <div>
-                        <input type="text" name="Name" placeholder="Your Name" required 
-                               class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors">
-                    </div>
-                    <div>
-                        <input type="email" name="Email" placeholder="Your Email" required 
-                               class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors">
-                    </div>
-                    <div>
-                        <textarea name="Message" rows="6" placeholder="Your Message" required 
-                                  class="w-full px-6 py-4 bg-dark-light border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="w-full px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
-                        Send Message
-                    </button>
-                    <span id="msg" class="block text-center text-green-400 font-semibold"></span>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Copyright -->
-    <div class="text-center mt-20 text-gray-500">
-        <p>Copyright © 2026 GPYBUT. All rights reserved.</p>
-    </div>
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
